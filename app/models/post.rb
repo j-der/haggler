@@ -1,5 +1,7 @@
-class User < ActiveRecord::Base
+class Post < ActiveRecord::Base
 
-  has_many :posts
-  
-end 
+  belongs_to :user
+
+  validates :title, :description, presence: true
+
+end

@@ -1,0 +1,18 @@
+<% if @user && @user.errors.any? %>
+  <div>
+    <strong>Some issues with your message, please fix them:</strong>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<h1>Signup</h1>
+
+<form action="/users" method="POST">
+  email: <input name="email" type="text" /> <br/>
+  password: <input name="password" type="password" /> <br/>
+  <input type="submit" value="Sign Up" />
+</form>
