@@ -2,4 +2,6 @@ class User < ActiveRecord::Base
 
   has_many :posts
 
-end
+  validates :email, uniqueness: true
+  
+end 
