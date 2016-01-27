@@ -1,6 +1,5 @@
-class Post < ActiveRecord::Base
+class User < ActiveRecord::Base
 
-  belongs_to :user
+  has_many :posts
 
-
-end 
+end

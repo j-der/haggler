@@ -1,0 +1,21 @@
+<h1>New Post form</h1>
+<p>What are you offering for trade?</p>
+<p>Remember, you can offer anything from furniture to houseplants to services you can provide! Happy haggling!</p>
+
+<form method="POST" action="/posts" role="form">
+  <label>Type of offer</label>
+  <select name="category">
+    <option value="goods">Goods</option>
+    <option value="services">Services</option>
+  </select>
+
+  <label>Title</label>
+  <input type="text" name="title" placeholder="Tagline for your offer">
+
+  <label>Description</label>
+  <input type="text" name="description" placeholder="Details of your offer">
+
+  <label>Add an image!</label>
+  <input type="text" name="image_url" placeholder="URL to the image">
+
+
