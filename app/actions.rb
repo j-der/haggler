@@ -55,7 +55,7 @@ get '/posts/new' do
   erb :'posts/new'
 end
 
-post 'posts' do
+post '/posts' do
   if current_user
     @post = Post.new(
       title:       params[:title],

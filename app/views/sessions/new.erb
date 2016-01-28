@@ -1,9 +1,22 @@
-<h1>Login</h1>
-
-<form action="/login" method="POST">
-  email : <input name="email" type="text" /> <br/>
-  password : <input name="password" type="password" /> <br/>
-  <input type="submit" value="Log In" />
-</form>
-
-<a href="/users/new">New User? Sign Up Here</a>
+<header class="forms">
+    <div class="forms-header">
+      <h1 class="brand-heading">Login</h1>
+    </div>
+    <div class="container-forms">
+      <form action="/login" method="POST">
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Email: </label>
+          <input name="email" type="text" />
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Password: </label>
+          <input name="password" type="password" />
+        </div>
+        <div class="form-group">
+        <input type="submit" value="Log in" />
+        </div>
+      </form>
+      <a href="/users/new">New User? Sign Up <strong>Here</strong></a>
+    </div>
+  </div>
+</header>

@@ -9,10 +9,25 @@
   </div>
 <% end %>
 
-<h1>Signup</h1>
-
-<form action="/users" method="POST">
-  email: <input name="email" type="text" /> <br/>
-  password: <input name="password" type="password" /> <br/>
-  <input type="submit" value="Sign Up" />
-</form>
+<header class="forms">
+    <div class="forms-header">
+      <h1 class="brand-heading">Sign up</h1>
+    </div>
+    <div class="container-forms">
+      <form action="/users" method="POST">
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Email: </label>
+          <input name="email" type="text" />
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Password: </label>
+          <input name="password" type="password" />
+        </div>
+        <div class="form-group">
+        <input type="submit" value="Sign Up" />
+        </div>
+      </form>
+      <a href="/login">Already a User? Log in <strong>Here</strong></a>
+    </div>
+  </div>
+</header>
