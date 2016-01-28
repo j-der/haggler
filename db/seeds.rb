@@ -17,7 +17,7 @@ user2 = User.create!(
 User.all.each do |u|
   5.times do
     title = Faker::Commerce.product_name
-    description = Faker::Lorem.paragraph(8, true)
+    description = Faker::Hipster.paragraph(8, true)
     category = ["goods", "services"].sample
     url = Faker::Internet.url
     u.posts.create!(
