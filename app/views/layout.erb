@@ -49,6 +49,11 @@
                     <li>
                         <a href="/posts/new">What you got?</a>
                     </li>
+                    <li>
+                      <% if current_user %>
+                        <a href="/logout"><strong>Logout</strong></a>
+                      <% end %>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
