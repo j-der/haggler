@@ -13,10 +13,14 @@
         <% @posts.each do |post| %>
     			<h3 class="posts-heading"><a href="/posts/<%= post.id %>" class="posts-title"><%= post.title %></a></h3>
           <p class="posts-user-info">Posted in <span><a href="/posts/category/<%= post.category %>" class="posts-category"><%= post.category %></a></span>
-          <input type="hidden" name="category" value="<%= post.category %>" /> by: <%= post.user.email %> on <%= post.created_at %></p>
-        <% end %>
-		  <% end %>
-    </div>
-    
+            <input type="hidden" name="category" value="<%= post.category %>" /> by: <%= post.user.email %> on <%= post.created_at %></p>
+            <p> <%= post.like_count %> </p>
+            <form method="POST" action="/like">
+              <input type="hidden" name="post_id" value="<%= post.id %>" />
+              <input type="submit" value="Like" class="btn btn-primary <%= 'disabled' if current_user.liked?(post.id) %>" />
+            </form>
+  			</div>
+      <% end %>
+		<% end %>
   </div>
 </header>
