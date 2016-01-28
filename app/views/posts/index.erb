@@ -1,9 +1,12 @@
 <header class="posts">
 	<div class="posts-header">
 	  <h1 class="brand-heading">Welcome!</h1>
+    <p>HAGGLER's here to connect people looking for great deals. Wanna trade your sofa for a microwave? Maybe offer your git skills in exchange for a 1990s Honda Civic? Whatever it is, you're sure to find a trade here.</p>
+    <p>Check out the latest goods and skills listed below, or if you've got something to offer, <a href="/users/new">register for an account!</a></p>
 	</div>
   <div class="container-posts">
 		<h1 class="brand-heading">Recent Posts</h1>
+    <p>
 			<% if @posts.any? %>
         <% @posts.each do |post| %>
   			<div>
