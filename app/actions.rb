@@ -8,10 +8,10 @@ get '/' do
   erb :index
 end
 
-get '/logout' do 
+get '/logout' do
   session[:user_id] = nil
   redirect '/'
-end 
+end
 
 get '/login' do
   erb :'/sessions/new'
@@ -22,7 +22,7 @@ post '/login' do
   if user.password == params[:password]
     session[:user_id] = user.id
     redirect '/posts'
-  end 
+  end
 end
 
 get '/users' do
@@ -41,7 +41,7 @@ post '/users' do
   )
   if @user.save
     redirect '/posts'
-  else 
+  else
     erb :'/users/new'
   end
 end
@@ -59,7 +59,7 @@ post 'posts' do
   @post = Post.new(
     title:       params[:title],
     description: params[:description],
-    image_url:   params[:image_url]
-    user: #current_user?
+    image_url:   params[:image_url],
+    user: current_user
     )
 end
