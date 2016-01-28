@@ -1,6 +1,6 @@
 <% if @user && @user.errors.any? %>
   <div>
-    <strong>Some issues with your message, please fix them:</strong>
+    <strong>Some issues with your sign-up, please fix them:</strong>
     <ul>
       <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>

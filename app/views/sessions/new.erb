@@ -1,3 +1,7 @@
+<% if session[:bad_user] == true %>
+  <p> The email you’ve entered doesn’t match any account. </p>
+<% end %>
+
 <header class="forms">
     <div class="forms-header">
       <h1 class="brand-heading">Login</h1>

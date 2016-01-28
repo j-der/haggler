@@ -18,10 +18,14 @@ get '/login' do
 end
 
 post '/login' do
-  user = User.find_by(email: params[:email])
-  if user.password == params[:password]
-    session[:user_id] = user.id
+  session[:bad_user] = false 
+  @user = User.find_by(email: params[:email])
+  if @user && @user.authenticate(params[:password])
+    session[:user_id] = @user.id
     redirect '/posts'
+  else 
+    session[:bad_user] = true 
+    redirect '/login'
   end
 end
 
