@@ -68,6 +68,7 @@ post '/posts' do
     @post = Post.new(
       title:       params[:title],
       description: params[:description],
+      category:    params[:category],
       image_url:   params[:image_url],
       user_id: current_user.id
       )
