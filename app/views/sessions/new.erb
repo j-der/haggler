@@ -2,8 +2,8 @@
   <div class="forms-header">
     <% if session[:bad_user] == true %>
       <p class="errors"> The email or password you’ve entered doesn’t match any account. </p>
+      <a href="/users/new" class="posts-user-info">Don't have one yet? <strong>Sign Up</strong></a>
     <% end %>
-    <a href="/users/new" class="posts-user-info">Don't have one yet? <strong>Sign Up</strong></a>
     <h1 class="brand-heading">Login</h1>
   </div>
   <div class="container-forms">
