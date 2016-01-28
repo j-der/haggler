@@ -7,9 +7,8 @@
 			<% if @posts.any? %>
         <% @posts.each do |post| %>
   			<div>
-  				<h3><a href="/posts/<%= post.id %>"><%= post.title %></a></h3>
-          <p>Category: <%= post.category %></p>
-        	<p>Posted by: <%= post.user.email %> on <%= post.created_at %></p>
+  				<h3 class="posts-heading"><%= post.title %></h3>
+        	<p class="posts-user-info">Posted in <span class="posts-category"><%= post.category %></span> by: <%= post.user.email %> on <%= post.created_at %></p>
   			</div>
       <% end %>
 		<% end %>
