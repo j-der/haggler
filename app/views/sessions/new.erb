@@ -1,26 +1,25 @@
-<% if session[:bad_user] == true %>
-  <p> The email you’ve entered doesn’t match any account. </p>
-<% end %>
-
 <header class="forms">
-    <div class="forms-header">
-      <h1 class="brand-heading">Login</h1>
-    </div>
-    <div class="container-forms">
-      <form action="/login" method="POST">
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Email: </label>
-          <input name="email" type="text" />
-        </div>
-        <div class="form-group">
-          <label class="col-sm-3 control-label">Password: </label>
-          <input name="password" type="password" />
-        </div>
-        <div class="form-group">
+  <div class="forms-header">
+    <% if session[:bad_user] == true %>
+      <p class="errors"> The email or password you’ve entered doesn’t match any account. </p>
+    <% end %>
+    <a href="/users/new" class="posts-user-info">Don't have one yet? <strong>Sign Up</strong></a>
+    <h1 class="brand-heading">Login</h1>
+  </div>
+  <div class="container-forms">
+    <form action="/login" method="POST">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Email: </label>
+        <input name="email" type="text" />
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Password: </label>
+        <input name="password" type="password" />
+      </div>
+      <div class="form-group">
         <input type="submit" value="Log in" />
-        </div>
-      </form>
-      <a href="/users/new">New User? Sign Up <strong>Here</strong></a>
-    </div>
+      </div>
+    </form>
+    <a href="/users/new">New User? Sign Up <strong>Here</strong></a>
   </div>
 </header>
