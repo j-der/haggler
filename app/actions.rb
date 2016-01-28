@@ -19,8 +19,7 @@ end
 
 post '/login' do
   session[:bad_user] = false
-  @user = User.find_by(email: params[:email])
-  if @user && @user.authenticate(params[:password])
+  if @user = User.find_by(email: params[:email]).try(:authenticate, params[:password])
     session[:user_id] = @user.id
     redirect '/posts'
   else
@@ -93,12 +92,15 @@ get '/posts/category/:category' do
   erb :'posts/index'
 end
 
-
-
-
-
-
-
+post '/posts/delete/:id' do 
+  @post = Post.find(params[:id])
+  if current_user.email == @post.user.email
+    @post.destroy
+    redirect '/posts'
+  else 
+    redirect '/'
+  end
+end
 
 
 
