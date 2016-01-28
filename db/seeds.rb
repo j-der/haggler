@@ -27,5 +27,4 @@ User.all.each do |u|
       image_url: url
     )
   end
-  # binding.pry
 end
