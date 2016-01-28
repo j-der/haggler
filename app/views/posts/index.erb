@@ -1,5 +1,4 @@
 <header class="posts">
-<<<<<<< HEAD
 	<div class="posts-header">
 	  <h1 class="brand-heading">Welcome!</h1>
 	</div>
@@ -12,23 +11,7 @@
           <p><%= post.category %></p>
         	<p>Posted by: <%= post.user.email %> on <%= post.created_at %></p>
   			</div>
-        <% end %>
+      <% end %>
 		<% end %>
-=======
-  	<div class="posts-header">
-  	  <h1 class="brand-heading">Welcome!</h1>
-  	</div>
-    <div class="container-posts">
-			<h1 class="brand-heading">Recent Posts</h1>
-				<% if @posts.any? %>
-          <% @posts.each do |post| %>
-    			<div>
-    				<h3 class="posts-heading"><%= post.title %></h3>
-          	<p class="posts-user-info">Posted by: <%= post.user.email %> on <%= post.created_at %></p>
-    			</div>
-          <% end %>
-  		<% end %>
-    </div>
->>>>>>> 251cfa9df9e3a456b68de7c19ddd54a82b5c9e30
   </div>
 </header>
