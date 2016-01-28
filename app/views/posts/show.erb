@@ -5,12 +5,16 @@
   </div>
 
   <div class="container-posts">
+
+  <div><img src="<%= @post.image_url %>"/></div>
+
     <p><%= @post.description %></p>
     <p><small><a href="mailto:<%= @post.user.email %>?Subject=Let's Haggle" class="btn btn-circle-small page-scroll"><i class="fa fa-envelope-o animated"></i></a> <a href="mailto:<%= @post.user.email %>?Subject=Let's Haggle"><strong>Email</strong> the Hag to make your trade!</a></p></small>
   </div>
-  
+
   <div class="posts-header">
     <a href="/posts"><i class="fa fa-chevron-left"></i> Back to posts</a>
+
   </div>
 
   <div>
@@ -18,9 +22,11 @@
       <input type="hidden" name="postid" value="<%= @post.id %>" />
       <input type="submit" value="Delete Post" class="btn btn-primary active" />
     </form>
+    <p> <%= @post.like_count %> </p>
+      <form method="POST" action="/like">
+        <input type="hidden" name="post_id" value="<%= @post.id %>" />
+        <input type="submit" value="Like" class="btn btn-primary <%= 'disabled' if current_user.liked?(@post.id) %>" />
+      </form>
   </div>
 
 </header>
-
-
-
