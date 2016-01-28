@@ -4,13 +4,14 @@
     <p><strong>HAGGLER</strong>'s here to connect people looking for great deals. Wanna trade your sofa for a microwave? Maybe offer your git skills in exchange for a 1990s Honda Civic? Whatever it is, you're sure to find a trade here.</p>
     <p>Check out the latest goods and skills listed below, or register for an account to tell us <strong><a href="/users/new">what you got?</a></strong></p>
 	</div>
+
   <div class="container-posts">
 		<h1 class="brand-heading">Recent Posts</h1>
-    <p>
+
+    <div class="posts-row">
 			<% if @posts.any? %>
         <% @posts.each do |post| %>
-  			<div>
-  				<h3 class="posts-heading"><a href="/posts/<%= post.id %>"><%= post.title %></a></h3>
+    			<h3 class="posts-heading"><a href="/posts/<%= post.id %>" class="posts-title"><%= post.title %></a></h3>
           <p class="posts-user-info">Posted in <span><a href="/posts/category/<%= post.category %>" class="posts-category"><%= post.category %></a></span>
             <input type="hidden" name="category" value="<%= post.category %>" /> by: <%= post.user.email %> on <%= post.created_at %></p>
             <p> <%= post.like_count %> </p>
