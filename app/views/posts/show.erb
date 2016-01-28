@@ -6,6 +6,14 @@
    <p><%= @post.description %></p>
    <p><a href="mailto:<%= @post.user.email %>?Subject=Let's Haggle">Email the Hag to make your trade!</a></p>
   </div>
+  <div>
+    <form method="POST" action="/posts/delete/<%= @post.id %>">
+      <input type="hidden" name="postid" value="<%= @post.id %>" />
+      <input type="submit" value="Delete Post" class="btn btn-primary active" />
+    </form>
+  </div>
 </header>
+
+
 
 
