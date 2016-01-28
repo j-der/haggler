@@ -92,12 +92,17 @@ get '/posts/category/:category' do
   erb :'posts/index'
 end
 
-post '/posts/delete/:id' do 
+post '/posts/category' do
+  @posts = Post.where(category: params[:category])
+  erb :'posts/index'
+end
+
+post '/posts/delete/:id' do
   @post = Post.find(params[:id])
   if current_user.email == @post.user.email
     @post.destroy
     redirect '/posts'
-  else 
+  else
     redirect '/'
   end
 end

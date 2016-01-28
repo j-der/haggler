@@ -18,7 +18,7 @@ User.all.each do |u|
   5.times do
     title = Faker::Commerce.product_name
     description = Faker::Hipster.paragraph(8, true)
-    category = ["goods", "services"].sample
+    category = ["goods", "skills"].sample
     url = ["http://lorempixel.com/400/400/technics", "http://lorempixel.com/400/400/food/", "http://lorempixel.com/400/400/cats/"].sample
     u.posts.create!(
       title: title,
