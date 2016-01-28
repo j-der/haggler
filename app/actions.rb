@@ -52,7 +52,11 @@ get '/posts' do
 end
 
 get '/posts/new' do
-  erb :'posts/new'
+  if current_user
+    erb :'posts/new'
+  else 
+    redirect '/login'
+  end
 end
 
 post '/posts' do
