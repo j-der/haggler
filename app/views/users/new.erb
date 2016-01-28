@@ -2,11 +2,10 @@
     <div class="forms-header">
       <% if @user && @user.errors.any? %>
         <div>
-          <p class="errors">Some issues with your sign-up, please fix them:</p>
-          <ul>
-            <% @user.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-          </ul>
+          <p class="errors">
+              <% @user.errors.full_messages.each do |message| %>
+                <%= message %>
+          </p>
           <a href="/users" class="posts-user-info">Already a member? <strong>Log in</strong></a>
           <% end %>
         </div>
