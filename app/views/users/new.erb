@@ -1,16 +1,16 @@
-<% if @user && @user.errors.any? %>
-  <div>
-    <strong>Some issues with your sign-up, please fix them:</strong>
-    <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <header class="forms">
     <div class="forms-header">
+      <% if @user && @user.errors.any? %>
+        <div>
+          <p class="errors">Some issues with your sign-up, please fix them:</p>
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          </ul>
+          <a href="/users" class="posts-user-info">Already a member? <strong>Log in</strong></a>
+          <% end %>
+        </div>
+      <% end %>
       <h1 class="brand-heading">Sign up</h1>
     </div>
     <div class="container-forms">
