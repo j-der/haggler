@@ -37,6 +37,7 @@ h6 {
     font-weight: 400;
     font-size: 12px;
     margin: 0px 0 5px;
+    text-transform: none;
 }
 
 .errors {
@@ -545,12 +546,21 @@ a.button {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
 }
 
 .posts .posts-row {
     padding: 15px;
-    margin: 1%;
+    margin-bottom: 1%;
     background: rgba(45,45,45,.1);
+    border-style: none;
+}
+
+.posts .posts-row:hover,
+.posts .posts-row:focus {
+    background: rgba(45,45,45,.15);
 }
 
 .posts .posts-body .brand-heading {
