@@ -55,11 +55,15 @@ get '/posts/new' do
   erb :'posts/new'
 end
 
-post 'posts' do
+post '/posts' do
   @post = Post.new(
     title:       params[:title],
     description: params[:description],
     image_url:   params[:image_url]
-    user: #current_user?
     )
+  if @post.save
+    redirect '/posts'
+  else
+    erb :'posts/new'
+  end
 end
