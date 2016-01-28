@@ -50,6 +50,23 @@
                         <a href="/posts/new">What you got?</a>
                     </li>
                     <li>
+                    <form method="POST" action="/posts/category" role="form">
+                      <div class="form-group">
+
+                        <select name="category">
+                          <option name="goods" value="goods">Goods</option>
+                          <option name="services" value="services">Skills</option>
+                        </select>
+                        </div>
+                        </li>
+                        <li>
+                        <div class="form-group">
+                          <input type="submit" name"SEARCH">
+                        </div>
+                      </form>
+                      </li>
+                      </li>
+                    <li>
                       <% if current_user %>
                         <a href="/logout"><strong>Logout</strong></a>
                       <% end %>
