@@ -61,7 +61,7 @@ post '/posts' do
       title:       params[:title],
       description: params[:description],
       image_url:   params[:image_url],
-      users_id: current_user.id
+      user_id: current_user.id
       )
     if @post.save
       redirect '/posts'
