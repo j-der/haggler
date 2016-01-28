@@ -51,7 +51,7 @@ post '/users' do
 end
 
 get '/posts' do
-  @posts = Post.all
+  @posts = Post.all.order(like_count: :desc)
   erb :'posts/index'
 end
 
@@ -107,12 +107,17 @@ post '/posts/delete/:id' do
   end
 end
 
-
-
-
-
-
-
+post '/like' do 
+  @like = Like.new(
+    user_id: current_user.id, 
+    post_id: params[:post_id]
+  )
+  if @like.save
+    redirect '/posts'
+  else 
+    redirect '/'
+  end 
+end 
 
 
 
