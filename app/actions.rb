@@ -9,7 +9,7 @@ get '/' do
 end
 
 get '/logout' do
-  session[:user_id] = nil
+  session.clear
   redirect '/'
 end
 
@@ -61,7 +61,7 @@ post '/posts' do
       title:       params[:title],
       description: params[:description],
       image_url:   params[:image_url],
-      user: current_user
+      users_id: current_user.id
       )
     if @post.save
       redirect '/posts'
