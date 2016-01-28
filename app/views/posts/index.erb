@@ -8,15 +8,19 @@
   <div class="container-posts">
 		<h1 class="brand-heading">Recent Posts</h1>
 
-    <div class="posts-row">
-			<% if @posts.any? %>
-        <% @posts.each do |post| %>
-    			<h3 class="posts-heading"><a href="/posts/<%= post.id %>" class="posts-title"><%= post.title %></a></h3>
-          <p class="posts-user-info">Posted in <span><a href="/posts/category/<%= post.category %>" class="posts-category"><%= post.category %></a></span>
-          <input type="hidden" name="category" value="<%= post.category %>" /> by: <%= post.user.email %> on <%= post.created_at %></p>
-        <% end %>
-		  <% end %>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="posts-row">
+  			<% if @posts.any? %>
+          <% @posts.each do |post| %>
+      			<h3 class="posts-heading"><a href="/posts/<%= post.id %>" class="posts-title"><%= post.title %></a></h3>
+            <p class="posts-user-info">Posted in <span><a href="/posts/category/<%= post.category %>" class="posts-category"><%= post.category %></a></span>
+            <input type="hidden" name="category" value="<%= post.category %>" /> by: <%= post.user.email %> on <%= post.created_at %></p>
+          <% end %>
+  		  <% end %>
+      </div>
     </div>
-    
+  </div>
+
   </div>
 </header>
