@@ -72,16 +72,35 @@ p {
 }
 
 a {
+    color: #ff6666;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    text-transform: uppercase;
+    font-family: 'Raleway',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+}
+
+.posts-title {
     color: #2d2d2d;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
+    text-transform: uppercase;
+    font-family: 'Raleway',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+}
+
+.posts-title:hover,
+.posts-title:focus {
+    color: #00b0bc;
+    text-decoration: none;
 }
 
 a:hover,
 a:focus {
     text-decoration: none;
-    color: #3e596e;
+    color: #2d2d2d;
 }
 
 .light {
@@ -213,6 +232,21 @@ a:focus {
     }
 }
 
+.btn-circle-small {
+    width: 45px;
+    height: 45px;
+    padding: 3px 8px;
+    margin-right: 3px;
+    border: 2px solid #2d2d2d;
+    border-radius: 100%!important;
+    font-size: 26px;
+    color: #000;
+    background: rgba(45,45,45,.5);
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+
 .btn-circle {
     width: 75px;
     height: 75px;
@@ -247,14 +281,17 @@ a:focus {
 .btn-circle:hover,
 .btn-circle:focus,
 .btn-circle-post:hover,
-.btn-circle-post:focus {
+.btn-circle-post:focus,
+.btn-circle-small:hover,
+.btn-circle-small:focus {
     outline: 0;
     color: #2d2d2d;
     background: rgba(255,255,255,.1);
 }
 
 .btn-circle i.animated,
-.btn-circle-post i.animated {
+.btn-circle-post i.animated,
+.btn-circl-small i.animated, {
     -webkit-transition-property: -webkit-transform;
     -webkit-transition-duration: 1s;
     -moz-transition-property: -moz-transform;
@@ -262,7 +299,8 @@ a:focus {
 }
 
 .btn-circle:hover i.animated,
-.btn-circle-post:hover i.animated {
+.btn-circle-post:hover i.animated,
+.btn-circle-small:hover i.animated {
     -webkit-animation-name: pulse;
     -moz-animation-name: pulse;
     -webkit-animation-duration: 1.5s;
@@ -326,7 +364,7 @@ a:focus {
 .btn {
     border-radius: 0;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Raleway',"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
