@@ -82,4 +82,27 @@ post '/posts' do
   end
 end
 
+get '/posts/category/:category' do
+  @posts = Post.where(category: params[:category])
+  erb :'posts/index'
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
