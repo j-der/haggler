@@ -552,8 +552,7 @@ a.button {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 15px;
-    margin-right: 1%;
-    margin-left: 1%;
+    margin: 1%;
     background: rgba(45,45,45,.1);
 }
 
