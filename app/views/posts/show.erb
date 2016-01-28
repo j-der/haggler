@@ -1,19 +1,26 @@
 <header class="posts">
   <div class="posts-header">
-    <h1 class="brand-heading">Details for <%= @post.title %></h1>
+    <h1 class="brand-heading"><%= @post.title %></h1>
+    <p class="posts-user-info">Submitted by <%= @post.user.email %></p>
   </div>
+
   <div class="container-posts">
-   <p><%= @post.description %></p>
-   <p><strong><a href="mailto:<%= @post.user.email %>?Subject=Let's Haggle">Email the Hag to make your trade!</a></strong></p>
+    <p><%= @post.description %></p>
+    <p><small><a href="mailto:<%= @post.user.email %>?Subject=Let's Haggle" class="btn btn-circle-small page-scroll"><i class="fa fa-envelope-o animated"></i></a> <a href="mailto:<%= @post.user.email %>?Subject=Let's Haggle"><strong>Email</strong> the Hag to make your trade!</a></p></small>
   </div>
+  
+  <div class="posts-header">
+    <a href="/posts"><i class="fa fa-chevron-left"></i> Back to posts</a>
+  </div>
+
   <div>
     <form method="POST" action="/posts/delete/<%= @post.id %>">
       <input type="hidden" name="postid" value="<%= @post.id %>" />
       <input type="submit" value="Delete Post" class="btn btn-primary active" />
     </form>
   </div>
-</header>
 
+</header>
 
 
 
