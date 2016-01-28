@@ -77,7 +77,6 @@ a {
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
     text-transform: uppercase;
-    font-family: 'Raleway',"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
 }
 
@@ -225,6 +224,7 @@ a:focus {
 
     .intro .intro-body .brand-heading {
         font-size: 150px;
+        color: #2d2d2d;
     }
 
     .intro .intro-body .intro-text {
@@ -547,9 +547,14 @@ a.button {
     -o-background-size: cover;
 }
 
-.posts .posts-body {
-    display: table-cell;
-    vertical-align: middle;
+.posts .posts-row {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 15px;
+    margin-right: 1%;
+    margin-left: 1%;
+    background: rgba(45,45,45,.1);
 }
 
 .posts .posts-body .brand-heading {

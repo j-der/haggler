@@ -6,6 +6,7 @@
 	</div>
   <div class="container-posts">
 		<h1 class="brand-heading">Recent Posts</h1>
+      <div class="posts-row">
 			<% if @posts.any? %>
         <% @posts.each do |post| %>
   			<div>
@@ -14,6 +15,7 @@
             <input type="hidden" name="category" value="<%= post.category %>" /> by: <%= post.user.email %> on <%= post.created_at %></p>
           </div>
       <% end %>
+    </div>
 		<% end %>
   </div>
 </header>
