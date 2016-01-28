@@ -18,13 +18,13 @@ get '/login' do
 end
 
 post '/login' do
-  session[:bad_user] = false 
+  session[:bad_user] = false
   @user = User.find_by(email: params[:email])
   if @user && @user.authenticate(params[:password])
     session[:user_id] = @user.id
     redirect '/posts'
-  else 
-    session[:bad_user] = true 
+  else
+    session[:bad_user] = true
     redirect '/login'
   end
 end
@@ -58,9 +58,14 @@ end
 get '/posts/new' do
   if current_user
     erb :'posts/new'
-  else 
+  else
     redirect '/login'
   end
+end
+
+get '/posts/:id' do
+  @post = Post.find(params[:id])
+  erb :'posts/show'
 end
 
 post '/posts' do
