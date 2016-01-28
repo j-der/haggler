@@ -1,17 +1,17 @@
 <header class="posts">
-  	<div class="posts-header">
-  	  <h1 class="brand-heading">Welcome!</h1>
-  	</div>
-    <div class="container-posts">
-			<h1 class="brand-heading">Recent Posts</h1>
-				<% if @posts.any? %>
-          <% @posts.each do |post| %>
-    			<div>
-    				<h3><%= post.title %></h3>
-          	<p>Posted by: <%= post.user.email %> on <%= post.created_at %></p>
-    			</div>
-          <% end %>
-  		<% end %>
-    </div>
+	<div class="posts-header">
+	  <h1 class="brand-heading">Welcome!</h1>
+	</div>
+  <div class="container-posts">
+		<h1 class="brand-heading">Recent Posts</h1>
+			<% if @posts.any? %>
+        <% @posts.each do |post| %>
+  			<div>
+  				<h3><%= post.title %></h3>
+          <p><%= post.category %></p>
+        	<p>Posted by: <%= post.user.email %> on <%= post.created_at %></p>
+  			</div>
+        <% end %>
+		<% end %>
   </div>
 </header>
