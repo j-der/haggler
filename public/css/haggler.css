@@ -109,6 +109,7 @@ a:focus {
 
 .navbar-custom {
     margin-bottom: 0;
+    min-height: 70px;
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
     font-family: 'Raleway',"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -176,7 +177,7 @@ a:focus {
         padding: 5px 0;
         border-bottom: 0;
         letter-spacing: 1px;
-        background: rgba(45,45,45,.4);
+        background: #63D394;
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
         transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -225,7 +226,7 @@ a:focus {
 
     .intro .intro-body .brand-heading {
         font-size: 150px;
-        color: #2d2d2d;
+        color: #63D394;
     }
 
     .intro .intro-body .intro-text {
@@ -312,7 +313,7 @@ a:focus {
     -moz-animation-timing-function: linear;
 }
 
-@-webkit-keyframes pulse {    
+@-webkit-keyframes pulse {
     0% {
         -webkit-transform: scale(1);
         transform: scale(1);
@@ -329,7 +330,7 @@ a:focus {
     }
 }
 
-@-moz-keyframes pulse {    
+@-moz-keyframes pulse {
     0% {
         -moz-transform: scale(1);
         transform: scale(1);
@@ -518,8 +519,7 @@ a.button {
     box-sizing: border-box;
     padding: 15px;
     margin-right: 6%;
-    margin-left: 6%;
-    background: rgba(45,45,45,.1);
+    margin-left: 6%
 }
 
 .posts-header {
