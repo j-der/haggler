@@ -6,6 +6,10 @@
       		<input type="hidden" name="postid" value="<%= @post.id %>" />
       		<button type="submit" value="Delete Post" /><i class="fa fa-trash"></i></button></a>
     		</form>
+    		<form method="POST" action="/posts/traded/<%= @post.id %>">
+					<input type="hidden" name="postid" value="<%= @post.id %>" />
+					<button type="submit" value="Traded Post" /><i class="fa fa-check-square-o"></i></button></a>
+				</form>
     	<% end %>
     </h1>
     <p class="posts-user-info">Submitted by <%= @post.user.email %></p>
