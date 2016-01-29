@@ -387,6 +387,10 @@ a:focus {
     background-color: #42dca3;
 }
 
+button, select {
+    margin: 8px;
+}
+
 ul.banner-social-buttons {
     margin-top: 0;
 }
