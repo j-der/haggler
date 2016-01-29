@@ -2,7 +2,7 @@
 	<div class="posts-header">
 	  <h1 class="brand-heading">Welcome!</h1>
     <p><strong>HAGGLER</strong>'s here to connect people looking for great deals. Wanna trade your sofa for a microwave? Maybe offer your git skills in exchange for a 1990s Honda Civic? Whatever it is, you're sure to find a trade here.</p>
-    <p>Check out the latest goods and skills listed below, or register for an account to tell us <strong><a href="/users/new">what you got?</a></strong></p>
+    <p>Check out the latest goods and skills listed below, or register for an account to tell us <strong><a href="/posts/new">what you got?</a></strong></p>
 	</div>
 
   <div class="container-posts">
@@ -10,7 +10,6 @@
 
 			<% if @posts.any? %>
         <% @posts.each do |post| %>
-
         <a href="/posts/<%= post.id %>">
           <table class="posts posts-row">
             <tr>
@@ -20,6 +19,7 @@
                 <input type="hidden" name="category" value="<%= post.category %>" /> by: <%= post.user.email %> on <%= post.created_at %></p>
               </td>
               <td><p> <%= post.like_count %> </p>
+
                   <form method="POST" action="/like">
                     <input type="hidden" name="post_id" value="<%= post.id %>" />
                     <input type="submit" value="Like" class="btn btn-primary <%= 'disabled' if current_user.liked?(post.id) %>" />
@@ -30,7 +30,6 @@
 
         <% end %>
 		  <% end %>
-
   </div>
 </header>
 
