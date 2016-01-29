@@ -36,7 +36,7 @@ h6 {
     font-family: 'Raleway',"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
     font-size: 12px;
-    margin: 0px 0 5px;
+    margin: 0px 0 0px;
     text-transform: none;
 }
 
@@ -478,12 +478,30 @@ a.button {
   background-color: transparent;
 }
 
+.not-liked {
+    padding: 5px 0px;
+    color: #ff6948;
+}
+
+.liked {
+    padding: 5px 0px;
+    color: #ff6948;
+}
+
+.count {
+    font-family: 'Raleway',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    background: #2d2d2d;
+    color: #fff;
+}
+
+
 .modal-body {
-    background-color: #2e2e2e
+    background-color: #2e2e2e;
 }
 
 .modal-content {
-    background-color: #2e2e2e
+    background-color: #2e2e2e;
 }
 
 
@@ -518,8 +536,8 @@ a.button {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 15px;
-    margin-right: 6%;
-    margin-left: 6%
+    margin-right: 8%;
+    margin-left: 8%
 }
 
 .posts-header {
@@ -529,8 +547,8 @@ a.button {
     padding-right: 15px;
     padding-left: 15px;
     padding-bottom: 10px;
-    margin-right: 6%;
-    margin-left: 6%;
+    margin-right: 8%;
+    margin-left: 8%;
 }
 
 .posts {
@@ -542,6 +560,7 @@ a.button {
     color: #2d2d2d;
     background: url(../img/intro-bg2.jpg) no-repeat top center scroll;
     background-color: #fff;
+    background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -552,8 +571,8 @@ a.button {
 }
 
 .posts .posts-row {
-    padding: 15px;
-    margin-bottom: 1%;
+    padding: 7px;
+    margin-bottom: 1.5%;
     background: rgba(45,45,45,.1);
     border-style: none;
 }
@@ -686,3 +705,17 @@ a.button {
   background-color: #63D394;
   border-color: #63D394;
 }
+
+.clickable-div { 
+  position:absolute; 
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+
+  z-index: 1;
+
+  /* fixes overlap error in IE7/8, 
+     make sure you have an empty gif */
+  background-image: url('empty.gif');
+}  
