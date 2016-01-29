@@ -135,3 +135,8 @@ post '/posts/traded/:id' do
   @post.save
   redirect '/posts'
 end
+
+post '/posts/traded' do
+  @posts = Post.where(traded: true)
+  erb :'posts/index'
+end
