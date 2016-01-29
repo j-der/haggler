@@ -100,7 +100,7 @@ a {
 a:hover,
 a:focus {
     text-decoration: none;
-    color: #2d2d2d;
+    color: black;
 }
 
 .light {
@@ -149,7 +149,7 @@ a:focus {
 
 .navbar-custom .nav li a:hover {
     outline: 0;
-    color: #3e596e;
+    color: black;
     background-color: transparent;
     font-weight: 700;
 }
