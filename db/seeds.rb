@@ -14,6 +14,11 @@ user2 = User.create!(
   password: 'der'
 )
 
+user3 = User.create!(
+  email: 'haggler@example.com',
+  password: 'hag'
+)
+
 User.all.each do |u|
   5.times do
     title = Faker::Commerce.product_name
@@ -21,12 +26,15 @@ User.all.each do |u|
     category = ["goods", "skills"].sample
     url = ["http://lorempixel.com/400/400/technics", "http://lorempixel.com/400/400/food/", "http://lorempixel.com/400/400/cats/"].sample
     traded = [true, false].sample
+    like_count = (0..20).to_a.sample
+
     u.posts.create!(
       title: title,
       description: description,
       category: category,
       image_url: url,
-      traded: traded
+      traded: traded,
+      like_count: like_count
     )
   end
 end
