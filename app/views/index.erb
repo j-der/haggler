@@ -12,12 +12,22 @@
 
         <div class="intro-buttons">
 
-        <div class="col-12 col-sm-4"><div class="home-hover">
-          <a href="/login" class="btn btn-circle page-scroll">
-          <i class="fa fa-angle-double-down animated"></i>
-          </a>
-          </div><span>LOG IN</span>
-        </div>
+        <% if current_user == nil %>
+          <div class="col-12 col-sm-4"><div class="home-hover">
+            <a href="/login" class="btn btn-circle page-scroll">
+            <i class="fa fa-angle-double-down animated"></i>
+            </a>
+            </div><span>LOG IN</span>
+          </div>
+
+        <% else %>
+          <div class="col-12 col-sm-4"><div class="home-hover">
+            <a href="#" class="hidden">
+            </a>
+            </div>
+          </div>
+
+        <% end %>
 
         <div class="col-12 col-sm-4"><div class="home-hover">
           <a href="/posts" class="btn btn-circle-post page-scroll">
@@ -26,12 +36,14 @@
           </div><span>VIEW TRADES</span>
         </div>
 
-        <div class="col-12 col-sm-4"><div class="home-hover">
-          <a href="/users/new" class="btn btn-circle page-scroll">
-          <i class="fa fa-angle-double-up animated"></i>
-          </a>
-          </div><span>SIGN UP</span>
-        </div>
+        <% if current_user == nil %>
+          <div class="col-12 col-sm-4"><div class="home-hover">
+            <a href="/users/new" class="btn btn-circle page-scroll">
+            <i class="fa fa-angle-double-up animated"></i>
+            </a>
+            </div><span>SIGN UP</span>
+          </div>
+        <% end %>
 
         </div>
         </div>
