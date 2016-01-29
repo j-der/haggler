@@ -724,3 +724,11 @@ a.button {
     background-color: rgba(255,255,255,.3);
     border-color: rgba(255,255,255,.3);
 }
+
+.img-post {
+  vertical-align: middle;
+  float: left;
+  margin-right: 25px;
+  border: 2px;
+  border-style: solid
+}

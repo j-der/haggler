@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160128220140) do
+ActiveRecord::Schema.define(version: 20160129183131) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
@@ -25,11 +25,12 @@ ActiveRecord::Schema.define(version: 20160128220140) do
     t.string   "title"
     t.string   "description"
     t.string   "image_url"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.string   "category"
     t.integer  "user_id"
     t.integer  "like_count",  default: 0
+    t.boolean  "traded",      default: false
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
