@@ -17,7 +17,7 @@
 
   <div class="container-posts">
 
-  <div><img src="<%= @post.image_url %>"/></div>
+  <div><img class="img-post" src="<%= @post.image_url %>"/></div>
 
     <p><%= @post.description %></p>
     <p><small><a href="mailto:<%= @post.user.email %>?Subject=Let's Haggle" class="btn btn-circle-small page-scroll"><i class="fa fa-envelope-o animated"></i></a> <a href="mailto:<%= @post.user.email %>?Subject=Let's Haggle"><strong>Email</strong> this Hag to make a trade!</a></p></small>
