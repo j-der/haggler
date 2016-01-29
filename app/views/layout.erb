@@ -32,7 +32,7 @@
               <i class="fa fa-bars"></i>
           </button>
           <a class="navbar-brand page-scroll" href="/">
-            <small><% if current_user %>Hi, <%= current_user.email %><% end %></small>
+            <small><% if current_user %><strong>Hi,</strong> <%= current_user.email %><% end %></small>
           </a>
       </div>
 
@@ -44,33 +44,26 @@
               <a href="#page-top"></a>
           </li>
           <li>
-          <form method="POST" action="/posts/category" role="form">
-            <div class="form-group">
-              <select name="category">
-                <option name="goods" value="goods">Goods</option>
-                <option name="services" value="skills">Skills</option>
-              </select>
-            </div>
-            <li>
-              <div class="form-group">
-                <input class="btn btn-primary" type="submit" value="SEARCH" name"search">
-              </div>
-            </li>
-          </form>
-            </li>
-          </li>
-          <li>
-              <a class="page-scroll" href="/posts">Haggler Home</a>
+              <a href="/posts">Haggler Home</a>
           </li>
           <li>
               <a href="/posts/new">What you got?</a>
           </li>
           <li>
-              <a href="/login">Log in</a>
+            <button class="btn btn-primary dropdown-toggle page-scroll" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Search <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">  
+              <li class="dropdown-header">Categories</li>
+              <li><a href="#">Goods</li></a>
+              <li><a href="#">Skills</li></a>
+            </ul>
           </li>
           <li>
             <% if current_user %>
               <a href="/logout"><strong>Logout</strong></a>
+            <% else %>
+              <a href="/login"><strong>Log in</strong></a>
             <% end %>
           </li>
         </ul>
@@ -82,5 +75,33 @@
 
   <%= yield %>
 
-</body>
+    <!-- jQuery -->
+    <script src="/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/musicwall.js"></script>
+
+  </body>
 </html>
+
+
+<!-- <form method="POST" action="/posts/category" role="form">
+  <div class="page-scroll">
+    <select name="category">
+      <option name="goods" value="goods">Goods</option>
+      <option name="services" value="skills">Skills</option>
+    </select>
+  </div>
+
+  <li>
+    <div class="page-scroll">
+      <input class="btn btn-primary" type="submit" value="SEARCH" name="search">
+    </div>
+  </li>
+</form> -->

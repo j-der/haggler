@@ -5865,6 +5865,7 @@ button.close {
   cursor: pointer;
   background: transparent;
   border: 0;
+  opacity: 1;
 }
 .modal-open {
   overflow: hidden;
