@@ -19,12 +19,11 @@
                 <input type="hidden" name="category" value="<%= post.category %>" /> by: <%= post.user.email %> on <%= post.created_at %></p>
               </td>
               <td><p> <%= post.like_count %> </p>
-                <% if current_user %>
+
                   <form method="POST" action="/like">
                     <input type="hidden" name="post_id" value="<%= post.id %>" />
                     <input type="submit" value="Like" class="btn btn-primary <%= 'disabled' if current_user.liked?(post.id) %>" />
                   </form>
-                <% end %>
               </td></a>
             </tr>
           </table>
@@ -33,3 +32,20 @@
 		  <% end %>
   </div>
 </header>
+
+
+
+
+>>>>>>>>>
+
+<div class="panel-group posts-row">
+  <div class="panel posts-row">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">
+          <a href="#"><i class="glyphicon glyphicon-chevron-down"></i></span></button></a>Echo Beach
+      </h4>
+    </div>
+  </div>
+</div>
+

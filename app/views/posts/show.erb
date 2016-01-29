@@ -1,6 +1,13 @@
 <header class="posts">
   <div class="posts-header">
-    <h1 class="brand-heading"><%= @post.title %></h1>
+    <h1 class="brand-heading"><%= @post.title %>
+    	<% if current_user.email == @post.user.email%>
+    	  <form method="POST" action="/posts/delete/<%= @post.id %>">
+      		<input type="hidden" name="postid" value="<%= @post.id %>" />
+      		<button type="submit" value="Delete Post" /><i class="fa fa-trash"></i></button></a>
+    		</form>
+    	<% end %>
+    </h1>
     <p class="posts-user-info">Submitted by <%= @post.user.email %></p>
   </div>
 
