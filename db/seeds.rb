@@ -5,7 +5,7 @@ User.delete_all
 Post.delete_all
 
 user1 = User.create!(
-  username: "tessa",
+  username: "Tessa",
   email: 'tessa@example.com',
   password: '123'
 )
