@@ -5,18 +5,27 @@ User.delete_all
 Post.delete_all
 
 user1 = User.create!(
-  email: 'seller@example.com',
-  password: 'password'
+  username: "tessa",
+  email: 'tessa@example.com',
+  password: '123'
 )
 
 user2 = User.create!(
+  username: "Jas",
   email: 'jas@example.com',
-  password: 'der'
+  password: '123'
 )
 
 user3 = User.create!(
-  email: 'haggler@example.com',
-  password: 'hag'
+  username: "Niloo",
+  email: 'niloo@example.com',
+  password: '123'
+)
+
+user4 = User.create!(
+  username: "Shady",
+  email: 'shady@example.com',
+  password: '123'
 )
 
 User.all.each do |u|
