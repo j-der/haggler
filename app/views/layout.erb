@@ -32,7 +32,7 @@
               <i class="fa fa-bars"></i>
           </button>
           <a class="navbar-brand page-scroll" href="/">
-              <i class="fa fa-exchange"></i>
+              <small><% if current_user %><%= current_user.email %></small><% end %>
           </a>
       </div>
 
