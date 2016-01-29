@@ -19,13 +19,7 @@
                 <input type="hidden" name="category" value="<%= post.category %>" /> by: <%= post.user.email %> on <%= post.created_at %></p>
               </td>
               <td><p> <%= post.like_count %> </p>
-<<<<<<< HEAD
-              </td>
-              <td>
-                <% if current_user %>
-=======
 
->>>>>>> post_details2
                   <form method="POST" action="/like">
                     <input type="hidden" name="post_id" value="<%= post.id %>" />
                     <input type="submit" value="Like" class="btn btn-primary <%= 'disabled' if current_user.liked?(post.id) %>" />
