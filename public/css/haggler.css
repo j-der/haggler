@@ -389,6 +389,8 @@ a:focus {
 
 button, select {
     margin: 8px;
+    margin-left: 14px;
+    width: 20%;
 }
 
 ul.banner-social-buttons {
