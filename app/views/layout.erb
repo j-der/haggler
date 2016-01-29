@@ -32,7 +32,7 @@
               <i class="fa fa-bars"></i>
           </button>
           <a class="navbar-brand page-scroll" href="/">
-            <small><% if current_user %><strong>Hi,</strong> <%= current_user.email %><% end %></small>
+            <small><% if current_user %><strong>Hi,</strong> <%= current_user.username %><% end %></small>
           </a>
       </div>
 
@@ -53,7 +53,7 @@
             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
               Search <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">  
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
               <li class="dropdown-header">Categories</li>
               <li><a href="/posts#all">All</li></a>
               <li><a href="/posts/category/goods/#all">Goods</li></a>
