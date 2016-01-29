@@ -32,7 +32,7 @@
               <i class="fa fa-bars"></i>
           </button>
           <a class="navbar-brand page-scroll" href="/">
-            <small><% if current_user %>Hi, <%= current_user.email %><% end %></small>
+            <small><% if current_user %><strong>Hi,</strong> <%= current_user.email %><% end %></small>
           </a>
       </div>
 
@@ -45,15 +45,15 @@
           </li>
           <li>
           <form method="POST" action="/posts/category" role="form">
-            <div class="form-group">
+            <div class="page-scroll">
               <select name="category">
                 <option name="goods" value="goods">Goods</option>
                 <option name="services" value="skills">Skills</option>
               </select>
             </div>
             <li>
-              <div class="form-group">
-                <input class="btn btn-primary" type="submit" value="SEARCH" name"search">
+              <div class="page-scroll">
+                <input class="btn btn-primary" type="submit" value="SEARCH" name="search">
               </div>
             </li>
           </form>
