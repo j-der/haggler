@@ -32,7 +32,7 @@
               <i class="fa fa-bars"></i>
           </button>
           <a class="navbar-brand page-scroll" href="/">
-              <small><% if current_user %><%= current_user.email %></small><% end %>
+            <small><% if current_user %>Hi, <%= current_user.email %><% end %></small>
           </a>
       </div>
 
@@ -44,28 +44,30 @@
               <a href="#page-top"></a>
           </li>
           <li>
-              <a class="page-scroll" href="/posts">Haggler</a>
+          <form method="POST" action="/posts/category" role="form">
+            <div class="form-group">
+              <select name="category">
+                <option name="goods" value="goods">Goods</option>
+                <option name="services" value="skills">Skills</option>
+              </select>
+            </div>
+            <li>
+              <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="SEARCH" name"search">
+              </div>
+            </li>
+          </form>
+            </li>
+          </li>
+          <li>
+              <a class="page-scroll" href="/posts">Haggler Home</a>
           </li>
           <li>
               <a href="/posts/new">What you got?</a>
           </li>
           <li>
-          <form method="POST" action="/posts/category" role="form">
-            <div class="form-group">
-
-              <select name="category">
-                <option name="goods" value="goods">Goods</option>
-                <option name="services" value="skills">Skills</option>
-              </select>
-              </div>
-              </li>
-              <li>
-              <div class="form-group">
-                <input type="submit" name"search">
-              </div>
-            </form>
-            </li>
-            </li>
+              <a href="/login">Log in</a>
+          </li>
           <li>
             <% if current_user %>
               <a href="/logout"><strong>Logout</strong></a>
