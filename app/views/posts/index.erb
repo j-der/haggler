@@ -16,6 +16,7 @@
               <div class="panel-heading">
                 <h4 class="panel-title">
 
+                <%if current_user %>
                   <form method="POST" action="/like">
                     <input type="hidden" name="post_id" value="<%= post.id %>" />
                     <button type="submit" value="Like" class="close <%= 'disabled' if current_user.liked?(post.id) %>" aria-label="Close" />
@@ -26,6 +27,7 @@
                         </button>
                       <% end %>
                   </form>
+                <% end %>
 
                 <h3 class="posts-heading"><a href="/posts/<%= post.id %>" class="posts-title"><%= post.title %></a></h3>
                 <p class="posts-user-info">Posted in <span><a href="/posts/category/<%= post.category %>" class="posts-category"><%= post.category %></a></span>
