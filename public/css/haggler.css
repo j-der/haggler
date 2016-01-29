@@ -467,6 +467,12 @@ input:hover {
     color: #2d2d2d;
     background-color: transparent;
 }
+input.new-post-form {
+    width: 50%;
+}
+#new-post-form-desc {
+    height: 100px;
+}
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
@@ -731,4 +737,7 @@ a.button {
   margin-right: 25px;
   border: 2px;
   border-style: solid
+}
+.col-xs-3 {
+  width: 18%;
 }

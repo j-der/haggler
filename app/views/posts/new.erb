@@ -9,7 +9,7 @@
 
     <form method="POST" action="/posts" role="form">
       <div class="form-group">
-        <label class="col-sm-3 control-label">Type of offer</label>
+        <label class="col-xs-3 control-label">Type of offer</label>
         <select name="category">
           <option name="goods" value="goods">Goods</option>
           <option name="services" value="skills">Skills</option>
@@ -17,22 +17,23 @@
       </div>
 
       <div class="form-group">
-        <label class="col-sm-3 control-label">Title: </label>
-        <input type="text" name="title" placeholder="Tagline for your offer">
+        <label class="col-xs-3 control-label">Title: </label>
+        <input class="new-post-form" type="text" name="title" placeholder="Tagline for your offer">
       </div>
 
       <div class="form-group">
-        <label class="col-sm-3 control-label">Description: </label>
-        <input type="text" name="description" placeholder="Details of your offer">
+        <label class="col-xs-3 control-label">Description: </label>
+        <input class="new-post-form" id="new-post-form-desc" type="text" name="description" placeholder="Details of your offer">
       </div>
 
       <div class="form-group">
-        <label class="col-sm-3 control-label">Add an image!: </label>
-        <input type="text" name="image_url" placeholder="URL to the image">
+        <label class="col-xs-3 control-label">Add an image! </label>
+        <input class="new-post-form" type="text" name="image_url" placeholder="URL to the image">
       </div>
 
       <div class="form-group">
-       <input type="submit" name"get tradin'!">
+        <label class="col-xs-3 control-label"></label>
+        <input type="submit" name"submit" value="Haggle it!">
       </div>
     </form>
   </div>
