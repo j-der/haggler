@@ -1,8 +1,12 @@
+require_relative('helpers/helpers.rb')
+
 helpers do
   def current_user
     User.find(session[:user_id]) if session[:user_id]
   end
+
 end
+
 
 get '/' do
   erb :index
@@ -93,6 +97,7 @@ get '/posts/category/:category' do
 end
 
 post '/posts/category' do
+  # filter_by_category(category)
   @posts = Post.where(category: params[:category])
   erb :'posts/index'
 end
@@ -122,4 +127,11 @@ end
 
 get '/posts/update/:id' do 
   erb :'posts/update'
-end 
+end
+
+post '/posts/traded/:id' do
+  @post = Post.find(params[:id])
+  @post.traded = true
+  @post.save
+  redirect '/posts'
+end

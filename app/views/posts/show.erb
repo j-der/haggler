@@ -35,4 +35,11 @@
       </form>
   </div>
 
+
+<form method="POST" action="/posts/traded/<%= @post.id %>">
+	<input type="hidden" name="postid" value="<%= @post.id %>" />
+	<button type="submit" value="Traded Post" /><i class="fa fa-envelope"></i></button></a>
+</form>
+
+
 </header>
