@@ -120,7 +120,6 @@ post '/like' do
 end 
 
 
-
-
-
-
+get '/posts/update/:id' do 
+  erb :'posts/update'
+end 
