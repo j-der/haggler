@@ -32,7 +32,7 @@
               <i class="fa fa-bars"></i>
           </button>
           <a class="navbar-brand page-scroll" href="/">
-              <i class="fa fa-exchange"></i>
+            <small><% if current_user %>Hi, <%= current_user.email %><% end %></small>
           </a>
       </div>
 
@@ -61,7 +61,7 @@
               </li>
               <li>
               <div class="form-group">
-                <input type="submit" name"search">
+                <input class="btn btn-primary" type="submit" value="SEARCH" name"search">
               </div>
             </form>
             </li>

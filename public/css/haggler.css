@@ -680,3 +680,9 @@ a.button {
     margin-right: 15%;
     margin-left: 15%;
 }
+
+.btn-primary {
+  color: #fff;
+  background-color: #63D394;
+  border-color: #63D394;
+}
