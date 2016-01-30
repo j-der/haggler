@@ -14,6 +14,7 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="/css/haggler.css" rel="stylesheet">
@@ -49,15 +50,20 @@
               <a href="/posts/new">What you got?</a>
           </li>
           <li>
-            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdown_filter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
               Search <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <ul class="dropdown-menu" aria-labelledby="dropdown_filter">
               <li class="dropdown-header">Categories</li>
-              <li><a href="/posts#all">All</li></a>
-              <li><a href="/posts/category/goods/#all">Goods</li></a>
+              <li><a href="/posts/category/goods#all">Goods</li></a>
               <li><a href="/posts/category/skills#all">Skills</li></a>
+              <li class="divider"></li>
+              <li><a href="/posts/traded#all">Traded</li></a>
+              <li><a href="/posts/available#all">Available</li></a>
+              <li class="divider"></li>
+              <li><a href="/posts#all">View All</li></a>
             </ul>
+
           </li>
           <li>
             <% if current_user %>
@@ -75,33 +81,6 @@
 
   <%= yield %>
 
-<form method="POST" action="/posts/category" role="form">
-  <div class="page-scroll">
-    <select name="category">
-      <option name="goods" value="goods">Goods</option>
-      <option name="services" value="skills">Skills</option>
-    </select>
-  </div>
-    <li>
-    <div class="page-scroll">
-      <input class="btn btn-primary" type="submit" value="SEARCH" name="search">
-    </div>
-  </li>
-</form>
-
-<form method="POST" action="/posts/traded" role="form">
-  <div class="page-scroll">
-    <select name="traded">
-      <option name="t" value="traded">Traded</option>
-    </select>
-  </div>
-    <li>
-    <div class="page-scroll">
-      <input class="btn btn-primary" type="submit" value="SEARCH" name="search">
-    </div>
-  </li>
-</form>
-
 
     <!-- jQuery -->
     <script src="/js/jquery.js"></script>
@@ -115,8 +94,5 @@
     <!-- Custom Theme JavaScript -->
     <script src="/js/musicwall.js"></script>
 
-
   </body>
 </html>
-
-
