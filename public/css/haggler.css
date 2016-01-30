@@ -4,7 +4,7 @@ body {
     font-family: 'Raleway',"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 300;
     color: #2d2d2d;
-    background-color: #000;
+    background-color: #fff;
 }
 
 html {
@@ -493,11 +493,15 @@ a.button {
 .not-liked {
     padding: 5px 0px;
     color: #ff6948;
+    margin-left: 37%;
+    margin-top: -5%;
 }
 
 .liked {
     padding: 5px 0px;
     color: #ff6948;
+    margin-left: 37%;
+    margin-top: -5%;
 }
 
 .count {
@@ -740,18 +744,13 @@ a.button {
   border: 2px;
   border-style: solid
 }
+
 .col-xs-3 {
   width: 18%;
 }
 
-.trade_filter {
-    position: relative;
-    float: right;
-    margin-top: -25px;
-    margin-right: -101px;
-}
-
-.posts_header { 
-    float: left;
-    margin-top: -53px;
+.close:hover,
+.close:focus {
+  color: #fff;
+  opacity: 1;
 }

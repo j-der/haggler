@@ -6,10 +6,11 @@
           <% @user.errors.full_messages.each do |message| %>
             <%= message %>
         </p>
-        <a href="/users" class="posts-user-info">Already a Hag? <strong>Log in</strong></a>
           <% end %>
       </div>
     <% end %>
+
+    <a href="/users" class="posts-user-info">Already a Hag? <strong>Log in</strong></a>
     <h1 class="brand-heading">Sign up</h1>
   </div>
   <div class="container-forms">
