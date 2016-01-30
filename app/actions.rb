@@ -115,10 +115,9 @@ post '/like' do
   if @like.save
     redirect '/posts'
   else 
-    redirect '/'
+    redirect '/posts'
   end 
 end 
-
 
 get '/posts/update/:id' do 
   erb :'posts/update'
