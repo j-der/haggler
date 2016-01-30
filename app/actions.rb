@@ -132,15 +132,19 @@ post '/posts/delete/:id' do
 end
 
 post '/like' do 
-  @like = Like.new(
-    user_id: current_user.id, 
-    post_id: params[:post_id]
-  )
-  if @like.save
-    redirect '/posts'
+  if current_user
+    @like = Like.new(
+      user_id: current_user.id, 
+      post_id: params[:post_id]
+    )
+    if @like.save
+      redirect '/posts'
+    else 
+      redirect '/posts'
+    end 
   else 
     redirect '/posts'
-  end 
+  end
 end 
 
 get '/posts/update/:id' do 
