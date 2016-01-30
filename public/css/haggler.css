@@ -238,6 +238,12 @@ a:focus {
         font-size: 26px;
     }
 }
+a#haggler-splash {
+    text-shadow: 2px 2px 3px rgb(71, 71, 71);
+}
+a:hover #haggler-splash{
+    text-shadow: 0px;
+}
 
 .btn-circle-small {
     width: 45px;
