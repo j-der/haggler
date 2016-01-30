@@ -20,11 +20,13 @@ User.all.each do |u|
     description = Faker::Hipster.paragraph(8, true)
     category = ["goods", "skills"].sample
     url = ["http://lorempixel.com/400/400/technics", "http://lorempixel.com/400/400/food/", "http://lorempixel.com/400/400/cats/"].sample
+    traded = [true, false].sample
     u.posts.create!(
       title: title,
       description: description,
       category: category,
-      image_url: url
+      image_url: url,
+      traded: traded
     )
   end
 end
