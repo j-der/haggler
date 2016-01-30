@@ -25,7 +25,7 @@ post '/login' do
 end
 
 get '/posts/map' do
-  @post = Post.last
+  @post = Post.all
   erb :'posts/map'
 end
 
