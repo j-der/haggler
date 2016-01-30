@@ -410,8 +410,6 @@ button, select {
     width: 20%;
 }
 
-
-
 ul.banner-social-buttons {
     margin-top: 0;
 }
@@ -561,7 +559,7 @@ a.button {
     padding-bottom: 10px;
     margin-right: 6%;
     margin-left: 6%;
-    background: rgba(45,45,45,.1);
+    /*background: rgba(45,45,45,.1);*/
 }
 
 .container-posts {
