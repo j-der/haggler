@@ -1650,7 +1650,7 @@ pre code {
   width: 33.33333333%;
 }
 .col-xs-3 {
-  width: 25%;
+  width: 18%;
 }
 .col-xs-2 {
   width: 16.66666667%;
@@ -5865,6 +5865,7 @@ button.close {
   cursor: pointer;
   background: transparent;
   border: 0;
+  opacity: 1;
 }
 .modal-open {
   overflow: hidden;

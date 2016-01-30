@@ -1,53 +1,47 @@
-<header class="posts">
+<header class="posts" id="page-top">
 	<div class="posts-header">
 	  <h1 class="brand-heading">Welcome!</h1>
     <p><strong>HAGGLER</strong>'s here to connect people looking for great deals. Wanna trade your sofa for a microwave? Maybe offer your git skills in exchange for a 1990s Honda Civic? Whatever it is, you're sure to find a trade here.</p>
-    <p>Check out the latest goods and skills listed below, or register for an account to tell us <strong><a href="/posts/new">what you got?</a></strong></p>
+    <p id="all">Check out the latest goods and skills listed below, or register for an account to tell us <strong><a href="/posts/new">what you got?</a></strong></p>
 	</div>
 
   <div class="container-posts">
 		<h1 class="brand-heading">Recent Posts</h1>
 
-			<% if @posts.any? %>
+      <% if @posts.any? %>
         <% @posts.each do |post| %>
-        <a href="/posts/<%= post.id %>">
-          <table class="posts posts-row">
-            <tr>
-              <td class="posts-row">
-          			<h3 class="posts-heading"><a href="/posts/<%= post.id %>" class="posts-title"><%= post.title %></a></h3>
-                <p class="posts-user-info">Posted in <span><a href="/posts/category/<%= post.category %>" class="posts-category"><%= post.category %></a></span>
-                <input type="hidden" name="category" value="<%= post.category %>" /> by: <%= post.user.email %> on <%= post.created_at %></p>
-              </td>
-              <td><p> <%= post.like_count %> </p>
 
-                <% if current_user %>
+          <a href="/posts/<%= post.id %>">
+            <div class="panel posts-row">
+              <div class="panel-heading">
+                <h4 class="panel-title">
+
+                <%if current_user %>
                   <form method="POST" action="/like">
                     <input type="hidden" name="post_id" value="<%= post.id %>" />
-                    <input type="submit" value="Like" class="btn btn-primary <%= 'disabled' if current_user.liked?(post.id) %>" />
+                    <button type="submit" value="Like" class="close <%= 'disabled' if current_user.liked?(post.id) %>" aria-label="Close" />
+                      <% if current_user.liked?(post.id) %>
+                        <span aria-hidden="true"><i class="fa fa-heart fa-2x liked"></i></span> <span class="badge count"><%= post.like_count %></span></button>
+                      <% else %>
+                        <span aria-hidden="true"><i class="fa fa-heart-o fa-2x not-liked"></i></span> <span class="badge count"><%= post.like_count %></span>
+                        </button>
+                      <% end %>
                   </form>
-                <% end %> 
-              </td></a>
-            </tr>
-          </table>
+                <% end %>
+                <h3 class="posts-heading"><a href="/posts/<%= post.id %>" class="posts-title"><%= post.title %></a></h3>
+                <p class="posts-user-info">Posted in <span><a href="/posts/category/<%= post.category %>" class="posts-category"><%= post.category %></a></span>
+                <input type="hidden" name="category" value="<%= post.category %>" /> by: <%= post.user.username %> on <%= post.created_at %></p>
+
+                </h4>
+              </div>
+            </div>
+          </a>
 
         <% end %>
-		  <% end %>
+      <% end %>
+    </div>
+
+  <div class="container-posts">
+    <a href="#all"><i class="fa fa-chevron-up"></i> Back to top</a>
   </div>
 </header>
-
-
-
-
->>>>>>>>>
-
-<div class="panel-group posts-row">
-  <div class="panel posts-row">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-        <button type="button" class="close" aria-label="Close"><span aria-hidden="true">
-          <a href="#"><i class="glyphicon glyphicon-chevron-down"></i></span></button></a>Echo Beach
-      </h4>
-    </div>
-  </div>
-</div>
-
