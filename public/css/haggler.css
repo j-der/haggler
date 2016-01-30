@@ -35,7 +35,7 @@ h6 {
 .posts-user-info {
     font-family: 'Raleway',"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     margin: 0px 0 0px;
     text-transform: none;
 }
@@ -93,7 +93,7 @@ a {
 
 .posts-title:hover,
 .posts-title:focus {
-    color: #00b0bc;
+    color: #ff6948;
     text-decoration: none;
 }
 
@@ -387,9 +387,17 @@ a:focus {
     background-color: #42dca3;
 }
 
+button#dropdownMenu1{
+    margin: 8px;
+    width: 85%;
+}
 button, select {
     margin: 8px;
+    margin-left: 14px;
+    width: 20%;
 }
+
+
 
 ul.banner-social-buttons {
     margin-top: 0;
@@ -467,6 +475,12 @@ input:hover {
     color: #2d2d2d;
     background-color: transparent;
 }
+input.new-post-form {
+    width: 50%;
+}
+#new-post-form-desc {
+    height: 100px;
+}
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
@@ -540,8 +554,8 @@ a.button {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     padding: 15px;
-    margin-right: 8%;
-    margin-left: 8%
+    margin-right: 20%;
+    margin-left: 20%
 }
 
 .posts-header {
@@ -551,8 +565,8 @@ a.button {
     padding-right: 15px;
     padding-left: 15px;
     padding-bottom: 10px;
-    margin-right: 8%;
-    margin-left: 8%;
+    margin-right: 20%;
+    margin-left: 20%;
 }
 
 .posts {
@@ -723,4 +737,15 @@ a.button {
     color: #fff;
     background-color: rgba(255,255,255,.3);
     border-color: rgba(255,255,255,.3);
+}
+
+.img-post {
+  vertical-align: middle;
+  float: left;
+  margin-right: 25px;
+  border: 2px;
+  border-style: solid
+}
+.col-xs-3 {
+  width: 18%;
 }

@@ -1,8 +1,12 @@
+require_relative('helpers/helpers.rb')
+
 helpers do
   def current_user
     User.find(session[:user_id]) if session[:user_id]
   end
+
 end
+
 
 get '/' do
   erb :index
@@ -40,7 +44,9 @@ end
 post '/users' do
   @user = User.new(
     email: params[:email],
+    username: params[:username],
     password: params[:password]
+
   )
   if @user.save
     session[:user_id] = @user.id
@@ -51,7 +57,7 @@ post '/users' do
 end
 
 get '/posts' do
-  @posts = Post.all.order(like_count: :desc)
+  @posts = Post.all.order(like_count: :desc).order(created_at: :desc)
   erb :'posts/index'
 end
 
@@ -93,17 +99,20 @@ get '/posts/category/:category' do
 end
 
 post '/posts/category' do
+  # filter_by_category(category)
   @posts = Post.where(category: params[:category])
   erb :'posts/index'
 end
 
 post '/posts/delete/:id' do
-  @post = Post.find(params[:id])
-  if current_user.email == @post.user.email
-    @post.destroy
-    redirect '/posts'
-  else
-    redirect '/'
+  if current_user
+    @post = Post.find(params[:id])
+    if current_user.email == @post.user.email
+      @post.destroy
+      redirect '/posts'
+    else
+      redirect '/'
+    end
   end
 end
 
@@ -121,4 +130,16 @@ end
 
 get '/posts/update/:id' do 
   erb :'posts/update'
-end 
+end
+
+post '/posts/traded/:id' do
+  @post = Post.find(params[:id])
+  @post.traded = true
+  @post.save
+  redirect '/posts'
+end
+
+post '/posts/traded' do
+  @posts = Post.where(traded: true)
+  erb :'posts/index'
+end
