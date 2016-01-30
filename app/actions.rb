@@ -69,6 +69,16 @@ get '/posts/new' do
   end
 end
 
+get '/posts/traded' do
+  @posts = Post.where(traded: true)
+  erb :'posts/index'
+end
+
+get '/posts/available' do
+  @posts = Post.where(traded: false)
+  erb :'posts/index'
+end
+
 get '/posts/:id' do
   @post = Post.find(params[:id])
   erb :'posts/show'
@@ -137,9 +147,4 @@ post '/posts/traded/:id' do
   @post.traded = true
   @post.save
   redirect '/posts'
-end
-
-post '/posts/traded' do
-  @posts = Post.where(traded: true)
-  erb :'posts/index'
 end

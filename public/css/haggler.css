@@ -394,6 +394,9 @@ button#dropdownMenu1{
 button, select {
     margin: 8px;
     margin-left: 14px;
+}
+
+.form-width {
     width: 20%;
 }
 
@@ -499,11 +502,13 @@ a.button {
 .not-liked {
     padding: 5px 0px;
     color: #ff6948;
+    margin-top: -13%;
 }
 
 .liked {
     padding: 5px 0px;
     color: #ff6948;
+    margin-top: -13%;
 }
 
 .count {
@@ -746,6 +751,13 @@ a.button {
   border: 2px;
   border-style: solid
 }
+
 .col-xs-3 {
   width: 18%;
+}
+
+.close:hover,
+.close:focus {
+  color: #fff;
+  opacity: 1;
 }
