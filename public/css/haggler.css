@@ -18,7 +18,7 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 25px 0 10px;
+    margin: -8px 0 10px;
     font-family: 'Happy Fox',"Helvetica Neue",Helvetica,Arial,sans-serif;
     letter-spacing: 3px;
 }
@@ -72,7 +72,7 @@ p {
 @media(min-width:768px) {
     p {
         margin: 0px 0 25px;
-        font-size: 20px;
+        font-size: 17px;
         line-height: 1.2;
     }
 }
@@ -568,7 +568,8 @@ a.button {
     box-sizing: border-box;
     padding: 15px;
     margin-right: 13%;
-    margin-left: 13%
+    margin-left: 13%;
+    margin-bottom: -2%
 }
 
 .posts-header {
@@ -787,4 +788,12 @@ a.button {
   filter: alpha(opacity=20);
   opacity: .2;
 
+}
+
+.form-buttons {
+    button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  float: left;
+  position: relative;
 }
