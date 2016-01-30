@@ -1,18 +1,8 @@
 <header class="posts">
   <div class="posts-header">
-    <h1 class="brand-heading"><%= @post.title %>
-    	<% if current_user && current_user.email == @post.user.email%>
-    	  <form method="POST" action="/posts/delete/<%= @post.id %>">
-      		<input type="hidden" name="postid" value="<%= @post.id %>" />
-      		<button type="submit" value="Delete Post" /><i class="fa fa-trash"></i></button></a>
-    		</form>
-    		<form method="POST" action="/posts/traded/<%= @post.id %>">
-					<input type="hidden" name="postid" value="<%= @post.id %>" />
-					<button type="submit" value="Traded Post" /><i class="fa fa-check-square-o"></i></button></a>
-				</form>
-    	<% end %>
-    </h1>
-    <p class="posts-user-info">Submitted by <%= @post.user.email %></p>
+    <h1 class="brand-heading"><%= @post.title %></h1>
+
+    <p class="posts-user-info">Submitted by <%= @post.user.username %></p>
     <p class="posts-user-info">Listed in <%= @post.category %></p>
   </div>
 
@@ -22,20 +12,41 @@
 
     <p><%= @post.description %></p>
     <p><small><a href="mailto:<%= @post.user.email %>?Subject=Let's Haggle" class="btn btn-circle-small page-scroll"><i class="fa fa-envelope-o animated"></i></a> <a href="mailto:<%= @post.user.email %>?Subject=Let's Haggle"><strong>Email</strong> this Hag to make a trade!</a></p></small>
+    <!-- Likes heart -->
+    <div>
+    <form method="POST" action="/like">
+      <input type="hidden" name="post_id" value="<%= @post.id %>" />
+      <button type="submit" value="Like" class="show-close <%= 'disabled' if current_user && current_user.liked?(@post.id) %>" aria-label="Close" />
+        <% if current_user && current_user.liked?(@post.id) %>
+          <span aria-hidden="true"><i class="fa fa-heart fa-2x liked"></i></span> <span class="badge count"><%= @post.like_count %></span></button>
+        <% else %>
+          <span aria-hidden="true"><i class="fa fa-heart-o fa-2x not-liked"></i></span> <span class="badge count"><%= @post.like_count %></span>
+          </button>
+        <% end %>
+    </form>
+  </div>
+
+    <!-- These are the delete and traded buttons for users -->
+    <div><h4>
+      <% if current_user && current_user.email == @post.user.email%>
+        <form method="POST" action="/posts/delete/<%= @post.id %>">
+          <input type="hidden" name="postid" value="<%= @post.id %>" />
+          <button class="form-buttons" type="submit" value="Delete Post" /><i class="fa fa-trash"></i>&nbsp;Delete your post</button></a>
+        </form>
+        <form method="POST" action="/posts/traded/<%= @post.id %>">
+          <input type="hidden" name="postid" value="<%= @post.id %>" />
+          <button class="form-buttons"type="submit" value="Traded Post" /><i class="fa fa-check-square-o"></i>&nbsp;Mark as traded</button></a>
+        </form>
+      <% end %>
+      </h4>
+    </div>
   </div>
 
   <div class="posts-header">
+
     <a href="/posts"><i class="fa fa-chevron-left"></i> Back to posts</a>
   </div>
 
-  <div>
-    <p> <%= @post.like_count %> </p>
-    <% if current_user %> 
-      <form method="POST" action="/like">
-        <input type="hidden" name="post_id" value="<%= @post.id %>" />
-        <input type="submit" value="Like" class="btn btn-primary <%= 'disabled' if current_user.liked?(@post.id) %>" />
-      </form>
-    <% end %> 
-  </div>
+
 
 </header>
