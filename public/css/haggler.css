@@ -390,6 +390,9 @@ a:focus {
 button, select {
     margin: 8px;
     margin-left: 14px;
+}
+
+.form-width {
     width: 20%;
 }
 
@@ -493,15 +496,13 @@ a.button {
 .not-liked {
     padding: 5px 0px;
     color: #ff6948;
-    margin-left: 37%;
-    margin-top: -5%;
+    margin-top: -13%;
 }
 
 .liked {
     padding: 5px 0px;
     color: #ff6948;
-    margin-left: 37%;
-    margin-top: -5%;
+    margin-top: -13%;
 }
 
 .count {
