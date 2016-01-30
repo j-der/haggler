@@ -743,3 +743,15 @@ a.button {
 .col-xs-3 {
   width: 18%;
 }
+
+.trade_filter {
+    position: relative;
+    float: right;
+    margin-top: -25px;
+    margin-right: -101px;
+}
+
+.posts_header { 
+    float: left;
+    margin-top: -53px;
+}

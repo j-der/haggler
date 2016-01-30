@@ -124,7 +124,6 @@ post '/like' do
   end 
 end 
 
-
 get '/posts/update/:id' do 
   erb :'posts/update'
 end
