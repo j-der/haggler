@@ -23,6 +23,11 @@ h6 {
     letter-spacing: 3px;
 }
 
+h2.user-greeting {
+    margin: 12px 0 10px;
+    font-family: 'Happy Fox',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    letter-spacing: 3px;
+}
 .posts-heading {
     font-family: 'Raleway',"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
@@ -232,6 +237,9 @@ a:focus {
     .intro .intro-body .intro-text {
         font-size: 26px;
     }
+}
+a#haggler-splash {
+    text-shadow: 2px 2px 3px rgb(71, 71, 71);
 }
 
 .btn-circle-small {
