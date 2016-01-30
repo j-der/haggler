@@ -31,9 +31,8 @@
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
               <i class="fa fa-bars"></i>
           </button>
-          <a class="navbar-brand page-scroll" href="/">
-            <small><% if current_user %><strong>Hi,</strong> <%= current_user.username %>!<% end %></small>
-          </a>
+          <!-- <a class="navbar-brand page-scroll" href="/"> -->
+            <% if current_user %><h2>Hi, <%= current_user.username %><% end %></h2>          
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
