@@ -57,7 +57,7 @@ post '/users' do
 end
 
 get '/posts' do
-  @posts = Post.all.order(like_count: :desc)
+  @posts = Post.all.order(like_count: :desc).order(created_at: :desc)
   erb :'posts/index'
 end
 
