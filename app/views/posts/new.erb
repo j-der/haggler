@@ -7,7 +7,7 @@
     <p>What are you offering for trade?</p>
     <p>Remember, you can offer anything from furniture to houseplants to services and skills you can provide! Happy haggling!</p>
 
-    <form method="POST" action="/posts" role="form">
+    <form method="POST" action="/posts" role="form" id="new_post_form">
       <div class="form-group">
         <label class="col-xs-3 control-label form-width">Type of offer</label>
         <select class="new-post-form" name="category">
@@ -32,9 +32,56 @@
       </div>
 
       <div class="form-group">
+        <input type="hidden" name="latitude" id="lat">
+      </div>
+
+      <div class="form-group">
+        <input type="hidden" name="longitude" id="lng">
+      </div>
+
+      <div class="form-group">
         <label class="col-xs-3 control-label"></label>
         <input type="submit" name"submit" value="Haggle it!">
       </div>
     </form>
   </div>
+
+  <script>
+    $( document ).ready(function(){
+      var latitude, longitude;
+      var options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      };
+
+      function success(pos) {
+        var crd = pos.coords;
+
+        latitude = (crd.latitude);
+        longitude = (crd.longitude);
+
+      };
+
+      function error(err) {
+        console.warn('ERROR(' + err.code + '): ' + err.message);
+      };
+
+      navigator.geolocation.getCurrentPosition(success, error, options);
+
+      $( "#new_post_form" ).submit(function(event){
+        inputLat = $(this).find('#lat');
+        inputLng = $(this).find('#lng');
+        if (!inputLng.val() && !inputLat.val()) {
+          event.preventDefault()
+          inputLat.val(latitude);
+          inputLng.val(longitude);
+        }
+        this.submit();
+
+      })
+
+    })
+  </script>
+
 </header>

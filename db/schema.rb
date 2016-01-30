@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129234055) do
+ActiveRecord::Schema.define(version: 20160130201342) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 20160129234055) do
     t.integer  "user_id"
     t.integer  "like_count",  default: 0
     t.boolean  "traded",      default: false
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.string   "address"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
@@ -40,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160129234055) do
     t.string "password"
     t.string "password_digest"
     t.string "username"
+    t.string "address"
   end
 
 end
