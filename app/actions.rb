@@ -1,13 +1,5 @@
 require_relative('helpers/helpers.rb')
 
-helpers do
-  def current_user
-    User.find(session[:user_id]) if session[:user_id]
-  end
-
-end
-
-
 get '/' do
   erb :index
 end
@@ -57,7 +49,20 @@ post '/users' do
 end
 
 get '/posts' do
-  @posts = Post.all.order(like_count: :desc).order(created_at: :desc)
+  session[:offset] = 0
+  @posts = Post.all.limit(10).order(like_count: :desc).order(created_at: :desc)
+  erb :'posts/index'
+end
+
+get '/posts/older' do 
+  session[:offset] += 10 
+  @posts = Post.all.limit(10).offset(session[:offset]).order(like_count: :desc).order(created_at: :desc)
+  erb :'posts/index'
+end
+
+get '/posts/newer' do 
+  session[:offset] -= 10
+  @posts = Post.all.limit(10).offset(session[:offset]).order(like_count: :desc).order(created_at: :desc)
   erb :'posts/index'
 end
 
