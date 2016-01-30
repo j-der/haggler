@@ -44,7 +44,9 @@ end
 post '/users' do
   @user = User.new(
     email: params[:email],
+    username: params[:username],
     password: params[:password]
+
   )
   if @user.save
     session[:user_id] = @user.id
@@ -103,12 +105,14 @@ post '/posts/category' do
 end
 
 post '/posts/delete/:id' do
-  @post = Post.find(params[:id])
-  if current_user.email == @post.user.email
-    @post.destroy
-    redirect '/posts'
-  else
-    redirect '/'
+  if current_user
+    @post = Post.find(params[:id])
+    if current_user.email == @post.user.email
+      @post.destroy
+      redirect '/posts'
+    else
+      redirect '/'
+    end
   end
 end
 
