@@ -32,7 +32,7 @@
               <i class="fa fa-bars"></i>
           </button>
           <a class="navbar-brand page-scroll" href="/">
-            <small><% if current_user %><strong>Hi,</strong> <%= current_user.email %><% end %></small>
+            <small><% if current_user %><strong>Hi,</strong> <%= current_user.username %>!<% end %></small>
           </a>
       </div>
 
@@ -53,10 +53,10 @@
             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
               Search <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">  
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
               <li class="dropdown-header">Categories</li>
               <li><a href="/posts#all">All</li></a>
-              <li><a href="/posts/category/goods#all">Goods</li></a>
+              <li><a href="/posts/category/goods/#all">Goods</li></a>
               <li><a href="/posts/category/skills#all">Skills</li></a>
             </ul>
           </li>
@@ -76,6 +76,34 @@
 
   <%= yield %>
 
+<form method="POST" action="/posts/category" role="form">
+  <div class="page-scroll">
+    <select name="category">
+      <option name="goods" value="goods">Goods</option>
+      <option name="services" value="skills">Skills</option>
+    </select>
+  </div>
+    <li>
+    <div class="page-scroll">
+      <input class="btn btn-primary" type="submit" value="SEARCH" name="search">
+    </div>
+  </li>
+</form>
+
+<form method="POST" action="/posts/traded" role="form">
+  <div class="page-scroll">
+    <select name="traded">
+      <option name="t" value="traded">Traded</option>
+    </select>
+  </div>
+    <li>
+    <div class="page-scroll">
+      <input class="btn btn-primary" type="submit" value="SEARCH" name="search">
+    </div>
+  </li>
+</form>
+
+
     <!-- jQuery -->
     <script src="/js/jquery.js"></script>
 
@@ -88,21 +116,8 @@
     <!-- Custom Theme JavaScript -->
     <script src="/js/musicwall.js"></script>
 
+
   </body>
 </html>
 
 
-<!-- <form method="POST" action="/posts/category" role="form">
-  <div class="page-scroll">
-    <select name="category">
-      <option name="goods" value="goods">Goods</option>
-      <option name="services" value="skills">Skills</option>
-    </select>
-  </div>
-
-  <li>
-    <div class="page-scroll">
-      <input class="btn btn-primary" type="submit" value="SEARCH" name="search">
-    </div>
-  </li>
-</form> -->

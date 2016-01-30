@@ -35,7 +35,7 @@ h6 {
 .posts-user-info {
     font-family: 'Raleway',"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     margin: 0px 0 0px;
     text-transform: none;
 }
@@ -93,7 +93,7 @@ a {
 
 .posts-title:hover,
 .posts-title:focus {
-    color: #00b0bc;
+    color: #ff6948;
     text-decoration: none;
 }
 
@@ -389,6 +389,8 @@ a:focus {
 
 button, select {
     margin: 8px;
+    margin-left: 14px;
+    width: 20%;
 }
 
 ul.banner-social-buttons {
@@ -466,6 +468,12 @@ input:hover {
     outline: 0;
     color: #2d2d2d;
     background-color: transparent;
+}
+input.new-post-form {
+    width: 50%;
+}
+#new-post-form-desc {
+    height: 100px;
 }
 
 input:-webkit-autofill {
@@ -723,4 +731,15 @@ a.button {
     color: #fff;
     background-color: rgba(255,255,255,.3);
     border-color: rgba(255,255,255,.3);
+}
+
+.img-post {
+  vertical-align: middle;
+  float: left;
+  margin-right: 25px;
+  border: 2px;
+  border-style: solid
+}
+.col-xs-3 {
+  width: 18%;
 }
