@@ -12,7 +12,7 @@
 				</form>
     	<% end %>
     </h1>
-    <p class="posts-user-info">Submitted by <%= @post.user.email %></p>
+    <p class="posts-user-info">Submitted by <%= @post.user.username %></p>
     <p class="posts-user-info">Listed in <%= @post.category %></p>
   </div>
 
@@ -29,13 +29,17 @@
   </div>
 
   <div>
-    <p> <%= @post.like_count %> </p>
-    <% if current_user %> 
-      <form method="POST" action="/like">
-        <input type="hidden" name="post_id" value="<%= @post.id %>" />
-        <input type="submit" value="Like" class="btn btn-primary <%= 'disabled' if current_user.liked?(@post.id) %>" />
-      </form>
-    <% end %> 
+  <p>Number of likes</p>
+    <form method="POST" action="/like">
+      <input type="hidden" name="post_id" value="<%= @post.id %>" />
+      <button type="submit" value="Like" class="show-close <%= 'disabled' if current_user && current_user.liked?(@post.id) %>" aria-label="Close" />
+        <% if current_user && current_user.liked?(@post.id) %>
+          <span aria-hidden="true"><i class="fa fa-heart fa-2x liked"></i></span> <span class="badge count"><%= @post.like_count %></span></button>
+        <% else %>
+          <span aria-hidden="true"><i class="fa fa-heart-o fa-2x not-liked"></i></span> <span class="badge count"><%= @post.like_count %></span>
+          </button>
+        <% end %>
+    </form>
   </div>
 
 </header>
