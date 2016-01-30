@@ -24,6 +24,11 @@ post '/login' do
   end
 end
 
+get '/posts/map' do
+  @post = Post.last
+  erb :'posts/map'
+end
+
 get '/users' do
   @users = User.all
   redirect '/posts'
@@ -37,7 +42,8 @@ post '/users' do
   @user = User.new(
     email: params[:email],
     username: params[:username],
-    password: params[:password]
+    password: params[:password],
+    address: params[:address]
 
   )
   if @user.save
@@ -96,6 +102,8 @@ post '/posts' do
       description: params[:description],
       category:    params[:category],
       image_url:   params[:image_url],
+      latitude:    params[:latitude],
+      longitude:   params[:longitude],
       user_id: current_user.id
       )
     if @post.save

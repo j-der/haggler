@@ -7,6 +7,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+
     <link rel="stylesheet" href="/stylesheets/application.css">
     <link rel="stylesheet" href="/stylesheets/normalize.css">
 
@@ -22,6 +33,16 @@
     <!-- Custom Fonts -->
     <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,300' rel='stylesheet' type='text/css'>
+
+    <!-- jQuery -->
+    <script src="/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+
 
 </head>
 <body>
@@ -79,20 +100,9 @@
       <!-- /.container -->
   </nav>
 
+
   <%= yield %>
 
-
-    <!-- jQuery -->
-    <script src="/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="/js/jquery.easing.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="/js/musicwall.js"></script>
 
   </body>
 </html>
