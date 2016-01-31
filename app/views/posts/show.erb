@@ -4,6 +4,12 @@
 
     <p class="posts-user-info">Submitted by <%= @post.user.username %></p>
     <p class="posts-user-info">Listed in <%= @post.category %></p>
+    <small><em>Availability:&nbsp;
+                  <% if @post.traded == true %>
+                    <i class="fa fa-thumbs-o-up"></i>
+                <% else %>
+                  <i class="fa fa-thumbs-o-down"></i>
+                <% end %></em></small>
   </div>
 
   <div class="container-posts">
