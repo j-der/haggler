@@ -1,0 +1,59 @@
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+            <i class="fa fa-bars"></i>
+        </button>
+        <!-- <a class="navbar-brand page-scroll" href="/"> -->
+          <% if current_user %><h2 class="user-greeting">Hi, <%= current_user.username %>!<% end %></h2>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <ul class="nav navbar-nav">
+        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+        <li class="hidden">
+            <a href="#page-top"></a>
+        </li>
+
+        <li>
+            <a href="/posts">Haggler Home</a>
+        </li>
+
+        <li>
+            <a href="/posts/new">What you got?</a>
+        </li>
+
+        <li>
+          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdown_filter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Search <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdown_filter">
+            <li class="dropdown-header">Categories</li>
+            <li><a href="/posts/category/goods#all">Goods</li></a>
+            <li><a href="/posts/category/skills#all">Skills</li></a>
+            <li class="divider"></li>
+            <li><a href="/posts/traded#all">Traded</li></a>
+            <li><a href="/posts/available#all">Available</li></a>
+            <li class="divider"></li>
+            <li><a href="/posts#all">View All</li></a>
+            <li class="divider"></li>
+            <li><a href="/posts/map">Find on Map</li></a>
+          </ul>
+        </li>
+
+        <li>
+          <% if current_user %>
+            <a href="/logout"><strong>Logout</strong></a>
+          <% else %>
+            <a href="/login"><strong>Log in</strong></a>
+          <% end %>
+        </li>
+        
+      </ul>
+    </div>
+      <!-- /.navbar-collapse -->
+  </div>
+    <!-- /.container -->
+</nav>

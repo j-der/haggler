@@ -4,7 +4,7 @@ body {
     font-family: 'Raleway',"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 300;
     color: #2d2d2d;
-    background-color: grey;
+    background-color: #fff;
 }
 
 html {
@@ -28,6 +28,11 @@ h2.user-greeting {
     font-family: 'Happy Fox',"Helvetica Neue",Helvetica,Arial,sans-serif;
     letter-spacing: 3px;
 }
+
+h4, h2.copyright {
+    text-align: center
+}
+
 .posts-heading {
     font-family: 'Raleway',"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
@@ -257,6 +262,41 @@ a#haggler-splash {
     transition: background .3s ease-in-out;
 }
 
+.btn-circle-social {
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
+    color: #ff6666;
+    background: transparent;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+}
+
+.btn-circle-social:hover,
+.btn-circle-social:focus {
+    outline: 0;
+    color: #524b52
+}
+
+.btn-circle-social:hover i.animated {
+    -webkit-animation-name: pulse;
+    -moz-animation-name: pulse;
+    -webkit-animation-duration: 1.5s;
+    -moz-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+}
+
+.btn-circle-social i.animated {
+    -webkit-transition-property: -webkit-transform;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: -moz-transform;
+    -moz-transition-duration: 1s;
+}
+
 .btn-circle {
     width: 75px;
     height: 75px;
@@ -301,7 +341,7 @@ a#haggler-splash {
 
 .btn-circle i.animated,
 .btn-circle-post i.animated,
-.btn-circl-small i.animated, {
+.btn-circl-small i.animated {
     -webkit-transition-property: -webkit-transform;
     -webkit-transition-duration: 1s;
     -moz-transition-property: -moz-transform;
@@ -433,7 +473,23 @@ ul.banner-social-buttons {
 }
 
 footer {
-    padding: 50px 0;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    border-top-color: #2d2d2d;
+    border-top-style: dashed;
+    border-top-width: thin;
+}
+
+footer.navigation {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-color: #868686;
+    border-top-style: solid;
+    border-top-width: thin;
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 2%;
 }
 
 footer p {
