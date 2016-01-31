@@ -32,7 +32,7 @@
               <h3 class="posts-heading"><a href="/posts/<%= post.id %>" class="posts-title"><%= post.title %></a></h3>
               <p class="posts-user-info">Posted in <span><a href="/posts/category/<%= post.category %>" class="posts-category"><%= post.category %></a></span>
               <input type="hidden" name="category" value="<%= post.category %>" /> by: <%= post.user.username %> on <%= post.created_at.strftime("%b %d, %Y") %>&nbsp;&nbsp;&nbsp;&nbsp;
-                <em><small><% if post.traded == true %>
+                <em><small><% if post.traded == false %>
                   <i class="fa fa-thumbs-o-up avail">&nbsp;available!</i>
                 <% else %>
                   <i class="fa fa-thumbs-o-down unavail">&nbsp;traded</i>
