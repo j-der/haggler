@@ -483,13 +483,13 @@ footer {
 footer.navigation {
     padding-top: 15px;
     padding-bottom: 15px;
+    border-color: #868686;
     border-top-style: solid;
-    border-bottom-style: solid;
     border-top-width: thin;
-    border-bottom-width: thick;
     text-align: center;
-    margin: 12%;
-    background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 2%;
 }
 
 footer p {
