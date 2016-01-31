@@ -33,7 +33,7 @@ User.all.each do |u|
     title = Faker::Commerce.product_name
     description = Faker::Hipster.paragraph(8, true)
     category = ["goods", "skills"].sample
-    url = ["http://lorempixel.com/380/380/technics", "http://lorempixel.com/380/380/food/", "http://lorempixel.com/380/380/cats/"].sample
+    url = ["http://lorempixel.com/380/380/technics", "http://lorempixel.com/380/380/food/", "http://lorempixel.com/380/380/cats/", "http://lorempixel.com/380/380/people/"].sample
     traded = [true, false].sample
     like_count = (0..20).to_a.sample
     latitude = Faker::Address.latitude
@@ -49,5 +49,6 @@ User.all.each do |u|
       latitude: latitude,
       longitude: longitude
     )
+
   end
 end
