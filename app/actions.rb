@@ -25,7 +25,7 @@ post '/login' do
 end
 
 get '/posts/map' do
-  @post = Post.all
+  @post = Post.where(traded: false)
   erb :'posts/map'
 end
 
