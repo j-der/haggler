@@ -512,7 +512,13 @@ a.button {
     color: #ff6948;
     margin-top: -13%;
 }
+.avail {
+    color: #ff6948;
+}
 
+.unavail {
+    color: grey;
+}
 .not-liked:hover,
 .not-liked:focus {
     color: rgba(255, 105, 72, .6);
@@ -806,4 +812,8 @@ a.button {
   cursor: pointer;
   float: left;
   position: relative;
+}
+
+.avail {
+    color: #63D394;
 }
