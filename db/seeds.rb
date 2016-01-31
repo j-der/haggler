@@ -36,6 +36,8 @@ User.all.each do |u|
     url = ["http://lorempixel.com/380/380/technics", "http://lorempixel.com/380/380/food/", "http://lorempixel.com/380/380/cats/"].sample
     traded = [true, false].sample
     like_count = (0..20).to_a.sample
+    latitude = Faker::Address.latitude
+    longitude = Faker::Address.longitude
 
     u.posts.create!(
       title: title,
@@ -43,7 +45,9 @@ User.all.each do |u|
       category: category,
       image_url: url,
       traded: traded,
-      like_count: like_count
+      like_count: like_count,
+      latitude: latitude,
+      longitude: longitude
     )
   end
 end

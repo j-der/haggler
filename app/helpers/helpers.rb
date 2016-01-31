@@ -8,4 +8,8 @@ helpers do
     User.find(session[:user_id]) if session[:user_id]
   end
 
+  def pin_all_posts
+	  @post = Post.all
+  end
+
 end
