@@ -513,10 +513,20 @@ a.button {
     margin-top: -13%;
 }
 
+.not-liked:hover,
+.not-liked:focus {
+    color: rgba(255, 105, 72, .6);
+}
+
 .liked {
     padding: 5px 0px;
     color: #ff6948;
     margin-top: -13%;
+}
+
+.liked:hover,
+.liked:focus {
+    color: rgba(255, 105, 72, .6);
 }
 
 .count {
