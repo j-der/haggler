@@ -56,7 +56,7 @@ end
 
 get '/posts' do
   session[:offset] = 0
-  @posts = Post.all.limit(10).order(like_count: :desc).order(created_at: :desc)
+  @posts = Post.all.limit(10).order(created_at: :desc).order(like_count: :desc)
   erb :'posts/index'
 end
 
@@ -154,10 +154,6 @@ post '/like' do
     redirect '/posts'
   end
 end 
-
-get '/posts/update/:id' do 
-  erb :'posts/update'
-end
 
 post '/posts/traded/:id' do
   @post = Post.find(params[:id])
