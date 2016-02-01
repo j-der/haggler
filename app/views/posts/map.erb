@@ -5,7 +5,7 @@
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 43.64465, lng: -79.39503},
-      zoom: 11
+      zoom: 12
     });
 
   var post = <%= @post.to_json %>
@@ -62,5 +62,4 @@
   async defer></script>
 
 
-
-<%= partial(:'components/footer', :template_engine => :erb) %>
+</header>
