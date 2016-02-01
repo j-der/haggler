@@ -10,17 +10,17 @@
 
   var post = <%= @post.to_json %>
 
-  var torontoCoords = [
-  {
-  "latitude": 43.64465,
-  "longitude": -79.39503,
-  "title": "Lighthouse Labs - new digs"
-  },
-  {
-  "latitude": 43.64715,
-  "longitude": -79.40332,
-  "title": "Lighthouse Labs - old digs"
-  }];
+  // var torontoCoords = [
+  // {
+  // "latitude": 43.64465,
+  // "longitude": -79.39503,
+  // "title": "Lighthouse Labs - new digs"
+  // },
+  // {
+  // "latitude": 43.64715,
+  // "longitude": -79.40332,
+  // "title": "Lighthouse Labs - old digs"
+  // }];
 
   var mapOptions = {
     mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -34,6 +34,7 @@
   // for loop below only iterates and plots var post
   for (i = 0; i < post.length; i++) {
     var data = post[i]
+    console.log(data.latitude)
     var myLatlng = new google.maps.LatLng(data.latitude, data.longitude);
     var marker = new google.maps.Marker({
       position: myLatlng,
