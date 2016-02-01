@@ -91,13 +91,21 @@ a {
     font-weight: 400;
 }
 
-#section1,#section1 a {
+
+#section1 {
     background-color:#fff;
     background: url(../img/little_dudes.jpg) no-repeat;
+    border-radius: 4px;
     padding: 40px;
     text-align: center;
     margin-top: 5%;
     margin-bottom: 0;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.marker {
+    background-color: transparent;
 }
 
 .posts-title {
