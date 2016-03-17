@@ -94,7 +94,7 @@ a {
 
 #section1 {
     background-color:#fff;
-    background: url(../img/little_dudes.jpg) no-repeat;
+    background: url(../img/little_dudes.jpg);
     border-radius: 4px;
     padding: 40px;
     text-align: center;
@@ -140,7 +140,7 @@ a:focus {
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
     font-family: 'Raleway',"Helvetica Neue",Helvetica,Arial,sans-serif;
-    background-color: #000;
+    background-color: #63D394;
 }
 
 .navbar-custom .navbar-brand {
