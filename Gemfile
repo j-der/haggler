@@ -15,7 +15,6 @@ gem 'tux'
 gem 'bcrypt'
 
 group :development, :test do
-  gem 'pry'
   gem 'shotgun'
   gem 'sqlite3'
   gem 'faker'
