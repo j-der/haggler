@@ -60,6 +60,8 @@
 
         latitude = (crd.latitude);
         longitude = (crd.longitude);
+        console.log(latitude);
+        console.log(longitude);
 
       };
 
@@ -72,6 +74,8 @@
       $( "#new_post_form" ).submit(function(event){
         inputLat = $(this).find('#lat');
         inputLng = $(this).find('#lng');
+        console.log(inputLat);
+        console.log(inputLng);
         if (!inputLng.val() && !inputLat.val()) {
           event.preventDefault()
           inputLat.val(latitude);
