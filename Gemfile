@@ -3,6 +3,7 @@ source "https://rubygems.org"
 
 gem 'rake'
 gem 'activesupport'
+gem "activerecord"
 
 gem 'sinatra'
 gem 'sinatra-contrib'
